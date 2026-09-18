@@ -1,0 +1,13 @@
+{
+  "name": "super-tooling",
+  "owner": {
+    "name": "milewsk"
+  },
+  "plugins": [
+    {
+      "name": "core",
+      "source": "./plugins/core",
+      "description": "Staged problem-solving workflow with adversarial framing, one commitment gate, and verification as an invariant."
+    }
+  ]
+}

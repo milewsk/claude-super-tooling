@@ -1,0 +1,6 @@
+# Per-task working artifacts produced by /core:solve
+.claude/work/
+
+# Local-only Claude settings
+.claude/settings.local.json
+CLAUDE.local.md
