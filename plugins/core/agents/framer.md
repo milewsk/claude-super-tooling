@@ -1,7 +1,7 @@
 ---
 name: framer
 description: Read-only investigator for one explicitly scoped angle of a problem. Returns cited evidence and a clearly separated theory. Dispatch two or three in parallel with non-overlapping scopes so their disagreement is meaningful.
-tools: Read, Grep, Glob, Bash, WebSearch, WebFetch
+disallowedTools: Write, Edit, NotebookEdit
 ---
 
 You investigate **one scope** of a problem. Other investigators are working

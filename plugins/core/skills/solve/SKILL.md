@@ -59,10 +59,15 @@ the ones the whole approach rests on. Give it the claims, **not** the reasoning
 that produced them.
 
 It returns each claim as FALSIFIED, SURVIVED, or UNVERIFIABLE with evidence. A
-claim that is merely plausible and unchecked is UNVERIFIABLE, not SURVIVED.
+claim that is merely plausible and unchecked is UNVERIFIABLE, not SURVIVED —
+`red-team` runs the same model you do, so agreement from memory alone is one
+belief echoed twice, not an independent check.
 
-If your leading theory is falsified, return to FRAME. Do not proceed with a
-weakened version of a theory that failed.
+- **FALSIFIED** leading theory → return to FRAME. Do not proceed with a weakened
+  version of a theory that failed.
+- **UNVERIFIABLE** load-bearing claim → never silently treat it as true. Either
+  go verify it yourself, or carry it into the brief under `Unknowns` and say
+  plainly at the gate that the decision rests on it.
 
 ## Rung 1 — brief.md
 

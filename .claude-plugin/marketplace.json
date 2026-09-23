@@ -1,5 +1,6 @@
 {
   "name": "super-tooling",
+  "description": "Engineering workflow tooling for Claude Code: staged problem-solving with adversarial framing, one commitment gate, and verification as an invariant.",
   "owner": {
     "name": "milewsk"
   },
