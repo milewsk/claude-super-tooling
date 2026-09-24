@@ -6,17 +6,43 @@ for working non-trivial engineering problems.
 ## Install
 
 ```powershell
-claude plugin marketplace add D:/Projects/claude-super-tooling
+claude plugin marketplace add milewsk/claude-super-tooling
 claude plugin install core@super-tooling
 ```
 
-While developing, skip installing and load from disk instead:
+Third-party marketplaces have auto-update off by default. Turn it on once, in
+`/plugin` → **Marketplaces** → `super-tooling` → **Enable auto-update**, or pull
+updates by hand:
 
 ```powershell
-claude --plugin-dir ./plugins
+claude plugin marketplace update super-tooling
 ```
 
-Then `/reload-plugins` after each edit. `scripts/dev.ps1` wraps this.
+## Develop
+
+The plugin installs from GitHub, so it is copied into `~/.claude/plugins/cache`
+and editing files in this repo does not affect the installed copy. To work on it,
+load the repo over the installed version for one session:
+
+```powershell
+.\scripts\dev.ps1          # wraps: claude --plugin-dir ./plugins
+```
+
+A `--plugin-dir` plugin takes precedence over an installed plugin of the same
+name for that session, so this needs no uninstall. Within the session,
+`/reload-plugins` picks up edits to `agents/` and `hooks/`; changes to a
+`SKILL.md` apply immediately.
+
+## Release
+
+Because installs are copies, edits reach an installed copy only through a
+version bump:
+
+1. bump `version` in `plugins/core/.claude-plugin/plugin.json`
+2. commit and push
+3. `claude plugin marketplace update super-tooling`
+
+Skipping step 1 means step 3 finds nothing to update.
 
 ## What `core` does
 
